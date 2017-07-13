@@ -1,0 +1,14 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://camel.notsoclever.cc/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://camel.notsoclever.cc/">
+    <xsd:element name="getRepos" type="tns:getRepos"/>
+    <xsd:complexType name="getRepos">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="owner" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getReposResponse" type="tns:getReposResponse"/>
+    <xsd:complexType name="getReposResponse">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="return" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

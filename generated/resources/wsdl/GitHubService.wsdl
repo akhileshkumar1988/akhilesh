@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="GitHubService" targetNamespace="http://camel.notsoclever.cc/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://camel.notsoclever.cc/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+<import namespace="http://camel.notsoclever.cc/" schemaLocation="GitHubService_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="getRepos">
+    <wsdl:part name="parameters" element="tns:getRepos">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getReposResponse">
+    <wsdl:part name="parameters" element="tns:getReposResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="GitHubService">
+    <wsdl:operation name="getRepos">
+      <wsdl:input name="getRepos" message="tns:getRepos">
+    </wsdl:input>
+      <wsdl:output name="getReposResponse" message="tns:getReposResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GitHubServiceServiceSoapBinding" type="tns:GitHubService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getRepos">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getRepos">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getReposResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GitHubService">
+    <wsdl:port name="GitHubServicePort" binding="tns:GitHubServiceServiceSoapBinding">
+      <soap:address location="http://localhost:9090/hello"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
